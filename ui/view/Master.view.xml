@@ -1,0 +1,33 @@
+            <PullToRefresh id="pullToRefresh" refresh="handleRefresh" />
+			<List
+				id="master1List"
+				items="{/Clusters}"
+				mode="{device>/listMode}"
+				noDataText="{i18n>masterListNoDataText}"
+				select="onSelect"
+                growing="true"
+				growingScrollToLoad="true">
+				<items>
+					<ObjectListItem
+					    id="master1ListItem"
+						type="{device>/listItemType}"
+						press="onSelect"
+						number="{users}"
+						numberUnit="Tweeters"
+						title="Cluster {clusterNumber}">
+						<attributes>
+							<ObjectAttribute 
+								text="Influence:{influence}, Stance:{stance}"/>
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+
+			<Toolbar>
+			    <ToolbarSpacer />
+                    <Button icon="sap-icon://scatter-chart" tooltip="Perform Clustering" press="handleCluster" />
+                    <Button icon="sap-icon://media-play" tooltip="Start Tracking" press="handleStartDialog" />
+                    <Button icon="sap-icon://media-pause" tooltip="Stop Tracking" press="handleStop" />
+                    <Button icon="sap-icon://media-rewind" tooltip="Reset System" press="handleReset" />
+			    <ToolbarSpacer />
+			</Toolbar>

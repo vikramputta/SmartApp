@@ -1,0 +1,8 @@
+    {
+      "path": "/destinations/java",
+      "target": {
+        "type": "destination",
+        "name": "java"
+      },
+      "description": "java"
+    },

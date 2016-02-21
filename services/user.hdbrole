@@ -1,0 +1,10 @@
+// do global replace on neo_ and p000 first
+
+// USAGE: CALL HCP.HCP_GRANT_ROLE_TO_USER('p000trial.dev.smartapp::user','p000');
+
+role p000trial.dev.smartapp::user 
+ {
+  catalog schema "NEO_": CREATE ANY, DROP, INDEX, SELECT, INSERT, UPDATE, DELETE;
+  catalog sql object "_SYS_AFL"."NEO__TWEETERS_CLUSTER": EXECUTE;
+  application privilege: p000trial.dev.smartapp::Execute;
+ }

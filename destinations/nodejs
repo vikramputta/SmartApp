@@ -1,0 +1,7 @@
+Name=nodejs
+Type=HTTP
+Description=nodejs
+URL=http\://nodejs.virtual\:8888
+ProxyType=OnPremise
+CloudConnectorVersion=2
+Authentication=NoAuthentication

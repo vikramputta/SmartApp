@@ -1,0 +1,8 @@
+    {
+      "path": "/destinations/nodejs",
+      "target": {
+        "type": "destination",
+        "name": "nodejs"
+      },
+      "description": "nodejs"
+    },

@@ -1,0 +1,23 @@
+			<List
+				id="master2List"
+				items="{Tweeters}"			
+				mode="{device>/listMode}"
+				noDataText="{i18n>masterListNoDataText}"
+				select="onSelect"
+				growing="true"
+				growingScrollToLoad="true">
+				<items>
+					<ObjectListItem
+					    id="master2ListItem"
+						type="{device>/listItemType}"
+						press="onSelect" 
+						title="@{user}" 
+						number="{tweetCount}"
+						numberUnit="Tweets">
+						<attributes>
+							<ObjectAttribute 
+								text="Influence:{influence}, Stance:{stance}"/>
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>

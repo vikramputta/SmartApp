@@ -1,0 +1,33 @@
+		<content>
+			<ObjectHeader 
+				title="@{user}" 
+				number="{tweetCount}"
+				numberUnit="Tweets">
+				<attributes>
+					<ObjectAttribute 
+						text="Influence:{influence}, Stance:{stance}"/>
+				</attributes>
+			</ObjectHeader>
+			<IconTabBar
+				select="onDetailSelect"
+				id="idIconTabBar">
+				<items>
+					<IconTabFilter
+						key="Details"
+						icon="sap-icon://hint">
+						<content>
+                        	<l:Grid
+                        	    id="detailGrid"
+                        		defaultSpan="L12 M12 S12"
+                        		width="auto">
+                        		<l:content>
+                                    <List items="{Tweets}">
+                                        <FeedListItem sender="{user}" timestamp="{created}" text="{text}" />
+                                    </List>
+                        		</l:content>
+                        	</l:Grid>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>

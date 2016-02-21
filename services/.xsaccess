@@ -1,0 +1,8 @@
+// do global replace on neo_ and p000 first
+
+{
+ "exposed": true,
+ "authentication": [{"method": "Form"}],
+ "authorization": ["p000trial.dev.smartapp::Execute"],
+ "prevent_xsrf": true
+}

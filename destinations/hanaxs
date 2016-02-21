@@ -1,0 +1,11 @@
+Name=hanaxs
+Type=HTTP
+Description=hanaxs
+URL=http\://hanaxs.virtual\:7891
+ProxyType=OnPremise
+CloudConnectorVersion=2
+Authentication=BasicAuthentication
+User=pXXX
+WebIDEEnabled=true
+WebIDESystem=hanaxs
+WebIDEUsage=odata_xs, odata_gen

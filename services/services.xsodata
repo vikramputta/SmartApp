@@ -1,0 +1,30 @@
+// do global replace on neo_ first
+
+service {
+    "NEO_"."Tweets" as "Tweets"
+        create forbidden 
+        update forbidden
+        delete forbidden;
+    "NEO_"."Tweeters" as "Tweeters" key ("user") 
+        create forbidden 
+        update forbidden 
+        delete forbidden;
+    "NEO_"."TweetersClustered" as "TweetersClustered" key ("user") 
+        navigates ("Tweeters2Tweets" as "Tweets")
+        create forbidden 
+        update forbidden 
+        delete forbidden;
+    "NEO_"."Clusters" as "Clusters" key ("clusterNumber")
+        navigates ("Clusters2Tweeters" as "Tweeters")
+        create forbidden 
+        update forbidden 
+        delete forbidden;
+    association "Clusters2Tweeters"
+        principal "Clusters"("clusterNumber") multiplicity "1" 
+        dependent "TweetersClustered"("clusterNumber") multiplicity "*"
+        ;
+    association "Tweeters2Tweets"
+        principal "TweetersClustered"("user") multiplicity "1" 
+        dependent "Tweets"("user") multiplicity "*"
+        ;
+}
